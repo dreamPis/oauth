@@ -22,12 +22,10 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "boot.oauth")
 public class BootSecurityProperties {
 
-
-
     /**
      * 定义token存储类型
      */
-    private TokenStoreType tokenStoreType = TokenStoreType.memory;
+    private TokenStoreType tokenStoreType = TokenStoreType.jwt;
 
     private String loginProcessUrl="/auth/authorize";
 

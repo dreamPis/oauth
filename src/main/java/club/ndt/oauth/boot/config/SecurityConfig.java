@@ -1,15 +1,11 @@
 package club.ndt.oauth.boot.config;
 
-import club.ndt.oauth.boot.config.auth2.BootOAuth2SecurityConfig;
-import club.ndt.oauth.boot.filter.BootClientCredentialsTokenEndpointFilter;
 import club.ndt.oauth.boot.support.BootAuthenticationProvider;
 import club.ndt.oauth.boot.support.BootLoginFailureHandler;
-import club.ndt.oauth.boot.support.oauth2.BootAccessDeniedHandler;
 import club.ndt.oauth.boot.support.BootSecurityProperties;
 import club.ndt.oauth.boot.support.BootUserDetailService;
 import club.ndt.oauth.boot.support.oauth2.BootOAuth2AuthExceptionEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -22,8 +18,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
-import org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter;
-import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 /**
  * @author ndt
@@ -51,6 +45,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     BootOAuth2AuthExceptionEntryPoint authenticationEntryPoint;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
 
     /**
      * 让Security 忽略这些url，不做拦截处理
@@ -70,17 +67,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailService);
+        auth.userDetailsService(userDetailService).passwordEncoder(passwordEncoder);
+        auth.authenticationProvider(authenticationProvider());
     }
 
     @Bean
     public AuthenticationProvider authenticationProvider(){
         return new BootAuthenticationProvider();
-    }
-
-    @Autowired
-    public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailService);
-        auth.authenticationProvider(authenticationProvider());
     }
 
     @Override

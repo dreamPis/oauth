@@ -31,7 +31,7 @@ public class TokenStoreConfig {
     private RedisConnectionFactory factory;
 
     @Autowired(required = false)
-    private JwtAccessTokenConverter converter;
+    private JwtAccessTokenConverter jwtAccessTokenConverter;
 
     @Bean
     public TokenStore tokenStore() throws Exception {
@@ -40,7 +40,7 @@ public class TokenStoreConfig {
 
         switch (properties.getTokenStoreType()) {
             case jwt:
-                store = new JwtTokenStore(converter);
+                store = new JwtTokenStore(jwtAccessTokenConverter());
                 break;
             case redis:
                 if (factory == null) {
@@ -61,9 +61,7 @@ public class TokenStoreConfig {
     @ConditionalOnMissingBean(JwtAccessTokenConverter.class)
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-
         converter.setSigningKey(properties.getTokenSigningKey());
-
         return converter;
     }
 }

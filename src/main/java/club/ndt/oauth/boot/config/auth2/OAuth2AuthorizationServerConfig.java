@@ -63,20 +63,13 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-
-
+        
         // 允许表单登录
         security.allowFormAuthenticationForClients();
 
         security.authenticationEntryPoint(authenticationEntryPoint);
 
         security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
-
-
-       Object o= context.getBean("springFilterChain");
-
-
-
 
     }
 

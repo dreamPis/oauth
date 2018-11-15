@@ -39,7 +39,7 @@ public class BootAuthenticationProvider implements AuthenticationProvider {
 
         //加密过程在这里体现
         log.info("结果BootUserDetailService后，已经查询出来的数据库存储密码:" + user.getPassword());
-        if (SecurityUtil.isRightPassword(password, user.getSalt(), user.getPassword())) {
+        if (!SecurityUtil.isRightPassword(password, user.getSalt(), user.getPassword())) {
             throw new DisabledException("Wrong password.");
         }
 

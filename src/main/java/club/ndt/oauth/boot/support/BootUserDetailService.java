@@ -40,7 +40,9 @@ public final class BootUserDetailService implements UserDetailsService {
         GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_USER");
         List <GrantedAuthority>authorities = new ArrayList<>();
         authorities.add(authority);
+        BootUser user = new BootUser(username, pjo.getPassword(), authorities);
+        user.setSalt(pjo.getSalt());
 
-        return new BootUser(username, pjo.getPassword(), authorities);
+        return user;
     }
 }
