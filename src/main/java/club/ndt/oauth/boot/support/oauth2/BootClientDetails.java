@@ -1,3 +1,4 @@
+/*
 package club.ndt.oauth.boot.support.oauth2;
 
 import club.ndt.oauth.boot.entity.Client;
@@ -11,13 +12,15 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
+*/
 /**
  * @author ndt
  * @create time 2018/10/16  15:36
  * @description
  * @modify by
  * @modify time
- **/
+ **//*
+
 @Data
 @SuppressWarnings("unchecked")
 public final class BootClientDetails implements ClientDetails {
@@ -107,3 +110,4 @@ public final class BootClientDetails implements ClientDetails {
         return null;
     }
 }
+*/

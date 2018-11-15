@@ -1,3 +1,4 @@
+/*
 package club.ndt.oauth.boot.config.auth2;
 
 import club.ndt.oauth.boot.filter.BootClientCredentialsTokenEndpointFilter;
@@ -27,13 +28,15 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 
 import javax.servlet.FilterChain;
 
+*/
 /**
  * @author ndt
  * @create time 2018/10/15  14:52
  * @description
  * @modify by
  * @modify time
- **/
+ **//*
+
 @Configuration
 @EnableAuthorizationServer
 public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
@@ -114,3 +117,4 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
     }
 
 }
+*/

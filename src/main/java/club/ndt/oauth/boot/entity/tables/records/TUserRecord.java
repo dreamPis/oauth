@@ -28,7 +28,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TUserRecord extends UpdatableRecordImpl<TUserRecord> {
 
-    private static final long serialVersionUID = -1448329112;
+    private static final long serialVersionUID = 1141226366;
 
     /**
      * Setter for <code>ndt.t_user.id</code>.

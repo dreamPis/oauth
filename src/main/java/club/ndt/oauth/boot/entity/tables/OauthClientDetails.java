@@ -38,7 +38,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class OauthClientDetails extends TableImpl<OauthClientDetailsRecord> {
 
-    private static final long serialVersionUID = -93877832;
+    private static final long serialVersionUID = -1941398205;
 
     /**
      * The reference instance of <code>ndt.oauth_client_details</code>

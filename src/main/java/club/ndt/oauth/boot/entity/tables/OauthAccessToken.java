@@ -33,7 +33,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class OauthAccessToken extends TableImpl<OauthAccessTokenRecord> {
 
-    private static final long serialVersionUID = -2045475265;
+    private static final long serialVersionUID = -61770966;
 
     /**
      * The reference instance of <code>ndt.oauth_access_token</code>

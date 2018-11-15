@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TUser extends TableImpl<TUserRecord> {
 
-    private static final long serialVersionUID = -1262785116;
+    private static final long serialVersionUID = 1823896687;
 
     /**
      * The reference instance of <code>ndt.t_user</code>

@@ -23,7 +23,7 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class OauthRefreshokenPjo implements Serializable {
 
-    private static final long serialVersionUID = 951086137;
+    private static final long serialVersionUID = 1735855630;
 
     private Timestamp createTime;
     private String    tokenId;

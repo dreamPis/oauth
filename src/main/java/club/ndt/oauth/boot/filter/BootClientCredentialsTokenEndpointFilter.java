@@ -1,3 +1,4 @@
+/*
 package club.ndt.oauth.boot.filter;
 
 import club.ndt.oauth.boot.response.BaseResponse;
@@ -32,12 +33,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Base64;
 
+*/
 /**
  * @author ndt
  * @create 2018/11/5 11:38
  * @description 认证不带客户端信息参数处理 filter
  * @modify
- */
+ *//*
+
 @Component
 public class BootClientCredentialsTokenEndpointFilter extends OncePerRequestFilter {
 
@@ -133,3 +136,4 @@ public class BootClientCredentialsTokenEndpointFilter extends OncePerRequestFilt
         this.clientDetailsService = clientDetailsService;
     }
 }
+*/

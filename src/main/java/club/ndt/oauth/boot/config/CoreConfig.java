@@ -1,3 +1,4 @@
+/*
 package club.ndt.oauth.boot.config;
 
 import org.mybatis.spring.annotation.MapperScan;
@@ -25,13 +26,15 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.ArrayList;
 import java.util.List;
 
+*/
 /**
  * @author ndt
  * @create time 2018/10/9  15:08
  * @description
  * @modify by
  * @modify time
- **/
+ **//*
+
 @Configuration
 @EnableSwagger2
 public class CoreConfig extends WebMvcConfigurationSupport {
@@ -42,16 +45,20 @@ public class CoreConfig extends WebMvcConfigurationSupport {
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 
-    /**
+    */
+/**
      * Could not resolve view with name 'forward:/oauth/confirm_access' in servlet with name 'dispatcherServlet'
-     */
-    /*@Override
+     *//*
+
+    */
+/*@Override
     protected void configureViewResolvers(ViewResolverRegistry registry) {
 
 
 
         registry.viewResolver(new InternalResourceViewResolver());
-    }*/
+    }*//*
+
 
     @Bean
     public Docket docket() {
@@ -87,3 +94,4 @@ public class CoreConfig extends WebMvcConfigurationSupport {
 
 
 }
+*/

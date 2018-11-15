@@ -31,7 +31,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TPersonalDetailRecord extends UpdatableRecordImpl<TPersonalDetailRecord> implements Record14<BigDecimal, String, Boolean, String, Integer, Integer, String, Boolean, Integer, Short, Short, Timestamp, BigDecimal, String> {
 
-    private static final long serialVersionUID = -801590295;
+    private static final long serialVersionUID = 2132245523;
 
     /**
      * Setter for <code>ndt.t_personal_detail.id</code>.

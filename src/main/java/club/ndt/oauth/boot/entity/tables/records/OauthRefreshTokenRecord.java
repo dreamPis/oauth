@@ -29,7 +29,7 @@ import org.jooq.impl.TableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class OauthRefreshTokenRecord extends TableRecordImpl<OauthRefreshTokenRecord> implements Record4<Timestamp, String, byte[], byte[]> {
 
-    private static final long serialVersionUID = -797133234;
+    private static final long serialVersionUID = -1080811932;
 
     /**
      * Setter for <code>ndt.oauth_refresh_token.create_time</code>.

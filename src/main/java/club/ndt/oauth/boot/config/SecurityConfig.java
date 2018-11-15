@@ -1,3 +1,4 @@
+/*
 package club.ndt.oauth.boot.config;
 
 import club.ndt.oauth.boot.config.auth2.BootOAuth2SecurityConfig;
@@ -23,13 +24,15 @@ import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
+*/
 /**
  * @author ndt
  * @create time 2018/10/10  11:48
  * @description
  * @modify by
  * @modify time
- **/
+ **//*
+
 @Configuration
 @Order(1)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -56,12 +59,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 
-    /**
+    */
+/**
      * 让Security 忽略这些url，不做拦截处理
      *
      * @param
      * @throws Exception
-     */
+     *//*
+
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers
@@ -121,3 +126,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 }
+*/

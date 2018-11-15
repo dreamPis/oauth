@@ -27,7 +27,7 @@ import org.jooq.impl.TableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class OauthCodeRecord extends TableRecordImpl<OauthCodeRecord> implements Record2<String, byte[]> {
 
-    private static final long serialVersionUID = 955119578;
+    private static final long serialVersionUID = -461694608;
 
     /**
      * Setter for <code>ndt.oauth_code.code</code>.

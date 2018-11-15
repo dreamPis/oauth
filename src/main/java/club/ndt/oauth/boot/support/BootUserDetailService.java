@@ -1,3 +1,4 @@
+/*
 package club.ndt.oauth.boot.support;
 
 import club.ndt.oauth.boot.entity.User;
@@ -15,13 +16,15 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
+*/
 /**
  * @author ndt
  * @create time 2018/10/11  9:13
  * @description
  * @modify by
  * @modify time
- **/
+ **//*
+
 @Component
 public final class BootUserDetailService implements UserDetailsService {
 
@@ -48,3 +51,4 @@ public final class BootUserDetailService implements UserDetailsService {
         return user;
     }
 }
+*/

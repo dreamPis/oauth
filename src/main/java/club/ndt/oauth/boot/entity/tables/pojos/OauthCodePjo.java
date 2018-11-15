@@ -22,7 +22,7 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class OauthCodePjo implements Serializable {
 
-    private static final long serialVersionUID = -790241770;
+    private static final long serialVersionUID = 1662895275;
 
     private String code;
     private byte[] authentication;

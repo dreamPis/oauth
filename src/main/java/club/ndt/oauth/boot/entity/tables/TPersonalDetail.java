@@ -40,7 +40,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TPersonalDetail extends TableImpl<TPersonalDetailRecord> {
 
-    private static final long serialVersionUID = -1758569214;
+    private static final long serialVersionUID = 1654877463;
 
     /**
      * The reference instance of <code>ndt.t_personal_detail</code>

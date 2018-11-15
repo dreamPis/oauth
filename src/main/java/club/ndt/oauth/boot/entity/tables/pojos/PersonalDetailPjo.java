@@ -24,7 +24,7 @@ import javax.annotation.Generated;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class PersonalDetailPjo implements Serializable {
 
-    private static final long serialVersionUID = 1227097529;
+    private static final long serialVersionUID = 572828622;
 
     private BigDecimal id;
     private String     identityId;

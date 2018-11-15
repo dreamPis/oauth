@@ -31,7 +31,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class OauthCode extends TableImpl<OauthCodeRecord> {
 
-    private static final long serialVersionUID = 1749220163;
+    private static final long serialVersionUID = 1006912366;
 
     /**
      * The reference instance of <code>ndt.oauth_code</code>

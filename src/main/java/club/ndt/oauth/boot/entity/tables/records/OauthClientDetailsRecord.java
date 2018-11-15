@@ -28,7 +28,7 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class OauthClientDetailsRecord extends UpdatableRecordImpl<OauthClientDetailsRecord> implements Record11<String, String, String, String, String, String, String, Integer, Integer, String, String> {
 
-    private static final long serialVersionUID = -652105941;
+    private static final long serialVersionUID = -321527211;
 
     /**
      * Setter for <code>ndt.oauth_client_details.client_id</code>. 主键,必须唯一,不能为空
