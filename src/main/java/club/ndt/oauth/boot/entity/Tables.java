@@ -36,12 +36,18 @@ import club.ndt.oauth.boot.entity.tables.CSensitiveWords;
 import club.ndt.oauth.boot.entity.tables.MtMessageAccepter;
 import club.ndt.oauth.boot.entity.tables.MtRoleMenu;
 import club.ndt.oauth.boot.entity.tables.MtUserRole;
+import club.ndt.oauth.boot.entity.tables.OauthAccessToken;
+import club.ndt.oauth.boot.entity.tables.OauthClientDetails;
+import club.ndt.oauth.boot.entity.tables.OauthCode;
+import club.ndt.oauth.boot.entity.tables.OauthRefreshToken;
 import club.ndt.oauth.boot.entity.tables.TAdvert;
 import club.ndt.oauth.boot.entity.tables.TAdvertBak;
+import club.ndt.oauth.boot.entity.tables.TAppVersion;
 import club.ndt.oauth.boot.entity.tables.TBanner;
 import club.ndt.oauth.boot.entity.tables.TBannerBak;
 import club.ndt.oauth.boot.entity.tables.TBannerModel;
 import club.ndt.oauth.boot.entity.tables.TBusinessResource;
+import club.ndt.oauth.boot.entity.tables.TButtonForm;
 import club.ndt.oauth.boot.entity.tables.TCollection;
 import club.ndt.oauth.boot.entity.tables.TCompanyDetail;
 import club.ndt.oauth.boot.entity.tables.TCompanyDetailPrecheck;
@@ -113,6 +119,7 @@ import club.ndt.oauth.boot.entity.tables.TPolicy;
 import club.ndt.oauth.boot.entity.tables.TPolicyService;
 import club.ndt.oauth.boot.entity.tables.TPolicyServiceApply;
 import club.ndt.oauth.boot.entity.tables.TPolicyServiceMaterial;
+import club.ndt.oauth.boot.entity.tables.TPolicyServiceRadix;
 import club.ndt.oauth.boot.entity.tables.TPolicyServiceSync;
 import club.ndt.oauth.boot.entity.tables.TProfessionAgent;
 import club.ndt.oauth.boot.entity.tables.TPropertyRightsTrading;
@@ -137,6 +144,8 @@ import club.ndt.oauth.boot.entity.tables.TSms;
 import club.ndt.oauth.boot.entity.tables.TStandardRate;
 import club.ndt.oauth.boot.entity.tables.TStaticSource;
 import club.ndt.oauth.boot.entity.tables.TStaticSourceBak;
+import club.ndt.oauth.boot.entity.tables.TStepBase;
+import club.ndt.oauth.boot.entity.tables.TStepButton;
 import club.ndt.oauth.boot.entity.tables.TTermBase;
 import club.ndt.oauth.boot.entity.tables.TThirdUser;
 import club.ndt.oauth.boot.entity.tables.TUser;
@@ -145,19 +154,24 @@ import club.ndt.oauth.boot.entity.tables.TUserCredittaskLog;
 import club.ndt.oauth.boot.entity.tables.TUserInfoDetail;
 import club.ndt.oauth.boot.entity.tables.TUserPropertyright;
 import club.ndt.oauth.boot.entity.tables.TVillageCompanyBaseinfo;
+import club.ndt.oauth.boot.entity.tables.TVillageCompanyBusiness;
 import club.ndt.oauth.boot.entity.tables.TVillageCompanyCredit;
 import club.ndt.oauth.boot.entity.tables.TVillageCompanyDetail;
+import club.ndt.oauth.boot.entity.tables.TVillageCompanyEmployment;
 import club.ndt.oauth.boot.entity.tables.TVillageCompanyEvaluation;
 import club.ndt.oauth.boot.entity.tables.TVillageCompanyFinance;
 import club.ndt.oauth.boot.entity.tables.TVillageCompanyHonor;
 import club.ndt.oauth.boot.entity.tables.TVillageCompanyInsurance;
 import club.ndt.oauth.boot.entity.tables.TVillageCompanyInvestment;
 import club.ndt.oauth.boot.entity.tables.TVillageCompanyKnowledge;
+import club.ndt.oauth.boot.entity.tables.TVillageCompanyLoan;
 import club.ndt.oauth.boot.entity.tables.TVillageCompanyManagement;
 import club.ndt.oauth.boot.entity.tables.TVillageCompanyPatent;
 import club.ndt.oauth.boot.entity.tables.TVillageCompanyPayment;
 import club.ndt.oauth.boot.entity.tables.TVillageCompanyPurchase;
 import club.ndt.oauth.boot.entity.tables.TVillageCompanyReward;
+import club.ndt.oauth.boot.entity.tables.TVillageCompanySales;
+import club.ndt.oauth.boot.entity.tables.TVillageCompanySubsidy;
 import club.ndt.oauth.boot.entity.tables.TVillageCompanyWarrant;
 import club.ndt.oauth.boot.entity.tables.TVillagePersonalAwardsPunishments;
 import club.ndt.oauth.boot.entity.tables.TVillagePersonalBaseinfo;
@@ -354,6 +368,26 @@ public class Tables {
     public static final MtUserRole MT_USER_ROLE = club.ndt.oauth.boot.entity.tables.MtUserRole.MT_USER_ROLE;
 
     /**
+     * The table <code>ndt.oauth_access_token</code>.
+     */
+    public static final OauthAccessToken OAUTH_ACCESS_TOKEN = club.ndt.oauth.boot.entity.tables.OauthAccessToken.OAUTH_ACCESS_TOKEN;
+
+    /**
+     * The table <code>ndt.oauth_client_details</code>.
+     */
+    public static final OauthClientDetails OAUTH_CLIENT_DETAILS = club.ndt.oauth.boot.entity.tables.OauthClientDetails.OAUTH_CLIENT_DETAILS;
+
+    /**
+     * The table <code>ndt.oauth_code</code>.
+     */
+    public static final OauthCode OAUTH_CODE = club.ndt.oauth.boot.entity.tables.OauthCode.OAUTH_CODE;
+
+    /**
+     * The table <code>ndt.oauth_refresh_token</code>.
+     */
+    public static final OauthRefreshToken OAUTH_REFRESH_TOKEN = club.ndt.oauth.boot.entity.tables.OauthRefreshToken.OAUTH_REFRESH_TOKEN;
+
+    /**
      * 散叶广告表
      */
     public static final TAdvert T_ADVERT = club.ndt.oauth.boot.entity.tables.TAdvert.T_ADVERT;
@@ -362,6 +396,11 @@ public class Tables {
      * 散叶广告表
      */
     public static final TAdvertBak T_ADVERT_BAK = club.ndt.oauth.boot.entity.tables.TAdvertBak.T_ADVERT_BAK;
+
+    /**
+     * APP版本管理
+     */
+    public static final TAppVersion T_APP_VERSION = club.ndt.oauth.boot.entity.tables.TAppVersion.T_APP_VERSION;
 
     /**
      * t_banner
@@ -382,6 +421,11 @@ public class Tables {
      * 业务资源表
      */
     public static final TBusinessResource T_BUSINESS_RESOURCE = club.ndt.oauth.boot.entity.tables.TBusinessResource.T_BUSINESS_RESOURCE;
+
+    /**
+     * 表单属性
+     */
+    public static final TButtonForm T_BUTTON_FORM = club.ndt.oauth.boot.entity.tables.TButtonForm.T_BUTTON_FORM;
 
     /**
      * The table <code>ndt.t_collection</code>.
@@ -739,6 +783,11 @@ public class Tables {
     public static final TPolicyServiceMaterial T_POLICY_SERVICE_MATERIAL = club.ndt.oauth.boot.entity.tables.TPolicyServiceMaterial.T_POLICY_SERVICE_MATERIAL;
 
     /**
+     * 政策申办统计基数
+     */
+    public static final TPolicyServiceRadix T_POLICY_SERVICE_RADIX = club.ndt.oauth.boot.entity.tables.TPolicyServiceRadix.T_POLICY_SERVICE_RADIX;
+
+    /**
      * 政策服务流程处理
      */
     public static final TPolicyServiceSync T_POLICY_SERVICE_SYNC = club.ndt.oauth.boot.entity.tables.TPolicyServiceSync.T_POLICY_SERVICE_SYNC;
@@ -859,6 +908,16 @@ public class Tables {
     public static final TStaticSourceBak T_STATIC_SOURCE_BAK = club.ndt.oauth.boot.entity.tables.TStaticSourceBak.T_STATIC_SOURCE_BAK;
 
     /**
+     * 步骤主表
+     */
+    public static final TStepBase T_STEP_BASE = club.ndt.oauth.boot.entity.tables.TStepBase.T_STEP_BASE;
+
+    /**
+     * 步骤操作按钮
+     */
+    public static final TStepButton T_STEP_BUTTON = club.ndt.oauth.boot.entity.tables.TStepButton.T_STEP_BUTTON;
+
+    /**
      * 项目大类型
      */
     public static final TTermBase T_TERM_BASE = club.ndt.oauth.boot.entity.tables.TTermBase.T_TERM_BASE;
@@ -899,6 +958,11 @@ public class Tables {
     public static final TVillageCompanyBaseinfo T_VILLAGE_COMPANY_BASEINFO = club.ndt.oauth.boot.entity.tables.TVillageCompanyBaseinfo.T_VILLAGE_COMPANY_BASEINFO;
 
     /**
+     * 村站采集的公司经营信息
+     */
+    public static final TVillageCompanyBusiness T_VILLAGE_COMPANY_BUSINESS = club.ndt.oauth.boot.entity.tables.TVillageCompanyBusiness.T_VILLAGE_COMPANY_BUSINESS;
+
+    /**
      * 村站采集的公司信用称号信息
      */
     public static final TVillageCompanyCredit T_VILLAGE_COMPANY_CREDIT = club.ndt.oauth.boot.entity.tables.TVillageCompanyCredit.T_VILLAGE_COMPANY_CREDIT;
@@ -907,6 +971,11 @@ public class Tables {
      * 村站采集的公司信息
      */
     public static final TVillageCompanyDetail T_VILLAGE_COMPANY_DETAIL = club.ndt.oauth.boot.entity.tables.TVillageCompanyDetail.T_VILLAGE_COMPANY_DETAIL;
+
+    /**
+     * 村站采集的公司用工信息
+     */
+    public static final TVillageCompanyEmployment T_VILLAGE_COMPANY_EMPLOYMENT = club.ndt.oauth.boot.entity.tables.TVillageCompanyEmployment.T_VILLAGE_COMPANY_EMPLOYMENT;
 
     /**
      * 村站采集的公司信用评价信息
@@ -939,6 +1008,11 @@ public class Tables {
     public static final TVillageCompanyKnowledge T_VILLAGE_COMPANY_KNOWLEDGE = club.ndt.oauth.boot.entity.tables.TVillageCompanyKnowledge.T_VILLAGE_COMPANY_KNOWLEDGE;
 
     /**
+     * 村站采集的公司贷款信息
+     */
+    public static final TVillageCompanyLoan T_VILLAGE_COMPANY_LOAN = club.ndt.oauth.boot.entity.tables.TVillageCompanyLoan.T_VILLAGE_COMPANY_LOAN;
+
+    /**
      * 村站采集的公司经营状况表
      */
     public static final TVillageCompanyManagement T_VILLAGE_COMPANY_MANAGEMENT = club.ndt.oauth.boot.entity.tables.TVillageCompanyManagement.T_VILLAGE_COMPANY_MANAGEMENT;
@@ -962,6 +1036,16 @@ public class Tables {
      * 村站采集的公司奖励/处罚信息
      */
     public static final TVillageCompanyReward T_VILLAGE_COMPANY_REWARD = club.ndt.oauth.boot.entity.tables.TVillageCompanyReward.T_VILLAGE_COMPANY_REWARD;
+
+    /**
+     * 村站采集的公司销售信息
+     */
+    public static final TVillageCompanySales T_VILLAGE_COMPANY_SALES = club.ndt.oauth.boot.entity.tables.TVillageCompanySales.T_VILLAGE_COMPANY_SALES;
+
+    /**
+     * 村站采集的公司政府补贴信息
+     */
+    public static final TVillageCompanySubsidy T_VILLAGE_COMPANY_SUBSIDY = club.ndt.oauth.boot.entity.tables.TVillageCompanySubsidy.T_VILLAGE_COMPANY_SUBSIDY;
 
     /**
      * 村站采集的公司权证信息
