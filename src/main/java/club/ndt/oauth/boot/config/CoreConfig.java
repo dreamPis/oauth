@@ -1,16 +1,9 @@
-/*
 package club.ndt.oauth.boot.config;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -26,15 +19,13 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.ArrayList;
 import java.util.List;
 
-*/
 /**
  * @author ndt
  * @create time 2018/10/9  15:08
  * @description
  * @modify by
  * @modify time
- **//*
-
+ **/
 @Configuration
 @EnableSwagger2
 public class CoreConfig extends WebMvcConfigurationSupport {
@@ -45,20 +36,16 @@ public class CoreConfig extends WebMvcConfigurationSupport {
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 
-    */
-/**
+    /**
      * Could not resolve view with name 'forward:/oauth/confirm_access' in servlet with name 'dispatcherServlet'
-     *//*
-
-    */
-/*@Override
+     */
+    /*@Override
     protected void configureViewResolvers(ViewResolverRegistry registry) {
 
 
 
         registry.viewResolver(new InternalResourceViewResolver());
-    }*//*
-
+    }*/
 
     @Bean
     public Docket docket() {
@@ -94,4 +81,3 @@ public class CoreConfig extends WebMvcConfigurationSupport {
 
 
 }
-*/

@@ -40,10 +40,10 @@ spring:
     encoding: UTF-8
 logging:
   level:
-    root: INFO
+    root: error
     org:
       springframework:
-        security: INFO
+        security: DEBUG
         scheduling: INFO
     com:
       zaxxer:

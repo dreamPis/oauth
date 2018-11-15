@@ -1,9 +1,7 @@
 package club.ndt.oauth.boot.authentication.mobile;
 
-import jdk.nashorn.internal.runtime.logging.Logger;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.Authentication;

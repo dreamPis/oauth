@@ -1,4 +1,3 @@
-/*
 package club.ndt.oauth.boot.dao.oauth;
 
 import club.ndt.oauth.boot.dao.BaseDaoImpl;
@@ -11,14 +10,12 @@ import org.springframework.stereotype.Repository;
 
 import static club.ndt.oauth.boot.entity.tables.OauthClientDetails.OAUTH_CLIENT_DETAILS;
 
-*/
 /**
  * @Author ser7en
  * @Date 2018-11-15 09:37
  * @version：
  * @Desc：
- *//*
-
+ */
 @Repository
 public class OauthClientDao extends BaseDaoImpl<OauthClientDetailsRecord, String> {
 
@@ -34,4 +31,3 @@ public class OauthClientDao extends BaseDaoImpl<OauthClientDetailsRecord, String
         return dsl.configuration();
     }
 }
-*/

@@ -1,4 +1,3 @@
-/*
 package club.ndt.oauth.boot.config.auth2;
 
 import club.ndt.oauth.boot.filter.BootClientCredentialsTokenEndpointFilter;
@@ -19,15 +18,13 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
 
-*/
 /**
  * @author ndt
  * @create time 2018/10/15  14:57
  * @description
  * @modify by
  * @modify time
- **//*
-
+ **/
 @Configuration
 @EnableResourceServer
 public class OAuth2ResourceServerConfig  extends ResourceServerConfigurerAdapter{
@@ -66,4 +63,3 @@ public class OAuth2ResourceServerConfig  extends ResourceServerConfigurerAdapter
 
 
 }
-*/

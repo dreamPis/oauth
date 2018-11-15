@@ -1,8 +1,8 @@
-/*
 package club.ndt.oauth.boot.config;
 
 import club.ndt.oauth.boot.config.auth2.BootOAuth2SecurityConfig;
 import club.ndt.oauth.boot.filter.BootClientCredentialsTokenEndpointFilter;
+import club.ndt.oauth.boot.support.BootAuthenticationProvider;
 import club.ndt.oauth.boot.support.BootLoginFailureHandler;
 import club.ndt.oauth.boot.support.oauth2.BootAccessDeniedHandler;
 import club.ndt.oauth.boot.support.BootSecurityProperties;
@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -24,15 +25,13 @@ import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
-*/
 /**
  * @author ndt
  * @create time 2018/10/10  11:48
  * @description
  * @modify by
  * @modify time
- **//*
-
+ **/
 @Configuration
 @Order(1)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -53,20 +52,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     BootOAuth2AuthExceptionEntryPoint authenticationEntryPoint;
 
 
-
-
-
-
-
-
-    */
-/**
+    /**
      * 让Security 忽略这些url，不做拦截处理
      *
      * @param
      * @throws Exception
-     *//*
-
+     */
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers
@@ -79,6 +70,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailService);
+    }
+
+    @Bean
+    public AuthenticationProvider authenticationProvider(){
+        return new BootAuthenticationProvider();
+    }
+
+    @Autowired
+    public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailService);
+        auth.authenticationProvider(authenticationProvider());
     }
 
     @Override
@@ -106,10 +108,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.httpBasic().disable();
 
-
-
-
-
     }
 
 
@@ -126,4 +124,3 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 }
-*/

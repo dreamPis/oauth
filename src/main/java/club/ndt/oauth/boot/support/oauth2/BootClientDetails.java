@@ -1,7 +1,6 @@
-/*
 package club.ndt.oauth.boot.support.oauth2;
 
-import club.ndt.oauth.boot.entity.Client;
+import club.ndt.oauth.boot.entity.tables.pojos.OauthClientDetailsPjo;
 import club.ndt.oauth.boot.utils.CommonUtils;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,23 +11,21 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
-*/
 /**
  * @author ndt
  * @create time 2018/10/16  15:36
  * @description
  * @modify by
  * @modify time
- **//*
-
+ **/
 @Data
 @SuppressWarnings("unchecked")
 public final class BootClientDetails implements ClientDetails {
 
-    private Client client;
+    private OauthClientDetailsPjo client;
     private Set<String> scope;
 
-    public BootClientDetails(Client client) {
+    public BootClientDetails(OauthClientDetailsPjo client) {
         this.client = client;
     }
 
@@ -48,8 +45,9 @@ public final class BootClientDetails implements ClientDetails {
 
     @Override
     public boolean isSecretRequired() {
-        return client.getIsSecretRequired();
+        return false;
     }
+
 
     @Override
     public String getClientSecret() {
@@ -58,8 +56,9 @@ public final class BootClientDetails implements ClientDetails {
 
     @Override
     public boolean isScoped() {
-        return client.getIsScoped();
+        return false;
     }
+
 
     @Override
     public Set<String> getScope() {
@@ -79,8 +78,8 @@ public final class BootClientDetails implements ClientDetails {
 
     @Override
     public Set<String> getRegisteredRedirectUri() {
-        return client.getRegisteredRedirectUri()!=null?
-                CommonUtils.transformStringToSet(client.getRegisteredRedirectUri(),String.class):null;
+        return client.getWebServerRedirectUri()!=null?
+                CommonUtils.transformStringToSet(client.getWebServerRedirectUri(),String.class):null;
     }
 
     @Override
@@ -91,18 +90,17 @@ public final class BootClientDetails implements ClientDetails {
 
     @Override
     public Integer getAccessTokenValiditySeconds() {
-        return client.getAccessTokenValiditySeconds();
+        return client.getAccessTokenValidity();
     }
 
     @Override
     public Integer getRefreshTokenValiditySeconds() {
-        return client.getRefreshTokenValiditySeconds();
+        return client.getRefreshTokenValidity();
     }
 
     @Override
-    public boolean isAutoApprove(String scope) {
-       return  this.client.getIsAutoApprove()==null ? false: this
-               .client.getIsAutoApprove();
+    public boolean isAutoApprove(String s) {
+        return false;
     }
 
     @Override
@@ -110,4 +108,3 @@ public final class BootClientDetails implements ClientDetails {
         return null;
     }
 }
-*/

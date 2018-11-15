@@ -1,4 +1,3 @@
-/*
 package club.ndt.oauth.boot.config.auth2;
 
 import club.ndt.oauth.boot.filter.BootClientCredentialsTokenEndpointFilter;
@@ -13,14 +12,12 @@ import org.springframework.security.web.DefaultSecurityFilterChain;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.stereotype.Component;
 
-*/
 /**
  * @author ndt
  * @create 2018/11/8 10:52
  * @description
  * @modify
- *//*
-
+ */
 @Component
 public class BootOAuth2SecurityConfig extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
 
@@ -65,4 +62,3 @@ public class BootOAuth2SecurityConfig extends SecurityConfigurerAdapter<DefaultS
 
 
 }
-*/

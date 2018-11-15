@@ -1,42 +1,30 @@
-/*
 package club.ndt.oauth.boot.config.auth2;
 
-import club.ndt.oauth.boot.filter.BootClientCredentialsTokenEndpointFilter;
-import club.ndt.oauth.boot.support.oauth2.BootAccessDeniedHandler;
 import club.ndt.oauth.boot.support.oauth2.BootClientDetailsService;
-import club.ndt.oauth.boot.support.oauth2.BootOAuth2AuthExceptionEntryPoint;
-import club.ndt.oauth.boot.support.oauth2.BootOAuth2WebResponseExceptionTranslator;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
-import org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter;
 import org.springframework.security.oauth2.provider.error.WebResponseExceptionTranslator;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
-import javax.servlet.FilterChain;
 
-*/
 /**
  * @author ndt
  * @create time 2018/10/15  14:52
  * @description
  * @modify by
  * @modify time
- **//*
-
+ **/
 @Configuration
 @EnableAuthorizationServer
 public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
@@ -117,4 +105,3 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
     }
 
 }
-*/
