@@ -11,7 +11,7 @@ public class JooqPgGenerator {
      */
     private void gen() {
         Jdbc jdbc = new Jdbc().withDriver("com.p6spy.engine.spy.P6SpyDriver")
-                .withUrl("jdbc:p6spy:postgresql://192.168.15.12:58083/oauth_boot?searchpath=ndt")
+                .withUrl("jdbc:p6spy:postgresql://192.168.15.12:58083/oauth_boot?currentSchema=ndt")
                 .withUser("postgres")
                 .withPassword("incitedata");
         Database database = new Database()

@@ -25,11 +25,10 @@ public final class BootClientDetailsService implements ClientDetailsService {
     public ClientDetails loadClientByClientId(String clientId) throws ClientRegistrationException {
 
         OauthClientDetailsPjo client = this.clientService.findClientByClientId(clientId);
-
         if(client==null){
             throw new ClientRegistrationException("客户端不存在");
         }
-
+        client.setAuthorities("READ");
         return new BootClientDetails(client);
     }
 
