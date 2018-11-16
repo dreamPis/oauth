@@ -16,6 +16,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
 import org.springframework.security.oauth2.provider.error.WebResponseExceptionTranslator;
+import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -63,7 +64,8 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
     private ApplicationContext context;
     @Autowired
     private PasswordEncoder passwordEncoder;
-
+    @Autowired(required = false)
+    private TokenEnhancer jwtTokenEnhancer;
 
 
     public OAuth2AuthorizationServerConfig() {
@@ -100,6 +102,7 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
         endpoints
                 .tokenStore(tokenStore)
                 .authenticationManager(authenticationManager)
+                .tokenEnhancer(jwtTokenEnhancer)
                 .allowedTokenEndpointRequestMethods(HttpMethod.POST,HttpMethod.GET);
 
         if (this.converter != null) {

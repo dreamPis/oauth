@@ -5,7 +5,9 @@ import club.ndt.oauth.boot.support.BootLoginFailureHandler;
 import club.ndt.oauth.boot.support.BootSecurityProperties;
 import club.ndt.oauth.boot.support.BootUserDetailService;
 import club.ndt.oauth.boot.support.oauth2.BootOAuth2AuthExceptionEntryPoint;
+import club.ndt.oauth.boot.support.oauth2.BootTokenEnhancer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -18,6 +20,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
+import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 
 /**
  * @author ndt
@@ -114,5 +117,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-
+    @Bean
+    @ConditionalOnMissingBean(name = "jwtTokenEnhancer")
+    public TokenEnhancer jwtTokenEnhancer(){
+        return new BootTokenEnhancer();
+    }
 }
